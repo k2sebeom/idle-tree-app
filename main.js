@@ -17,8 +17,8 @@ const devUrl = url.format({
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 500,
-    height: 400,
+    width: 400,
+    height: 600,
     skipTaskbar: true,
     frame: false,
     autoHideMenuBar: true,

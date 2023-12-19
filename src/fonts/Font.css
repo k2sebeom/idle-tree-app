@@ -1,0 +1,13 @@
+@font-face {
+  font-family: DNFBitBit;
+  font-style: normal;
+  font-weight: 100;
+  src: url("./DNFBitBit.ttf");
+}
+
+@font-face {
+  font-family: Cambridge;
+  font-style: normal;
+  font-weight: 100;
+  src: url("./Cambridge.otf")
+}

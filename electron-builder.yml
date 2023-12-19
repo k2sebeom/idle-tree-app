@@ -6,4 +6,10 @@ buildVersion: "0.1.0"
 
 directories:
   output: dist
-  buildResources: src/assets
+  buildResources: assets
+
+mac:
+  icon: assets/icon.icns
+
+win:
+  icon: assets/icon.ico
