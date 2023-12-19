@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Tray, Menu } = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -14,6 +14,8 @@ const devUrl = url.format({
   hostname: 'localhost',
   port: 3000,
 })
+
+const resourcePath = process.env.NODE_ENV === 'dev' ? __dirname : process.resourcesPath;
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -31,6 +33,18 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
-  createWindow()
+  const tray = new Tray(path.join(resourcePath, 'assets', 'trayicon.png'));
+  tray.setToolTip('Waiting for Christmas...');
+  const contextMenu = Menu.buildFromTemplate([
+    { label: 'Quit', type: 'normal', click: (menuItem, window, event) => {
+      app.quit()
+    }},
+  ])
+  tray.setContextMenu(contextMenu);
+
+  createWindow();
 })
 
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit()
+})
