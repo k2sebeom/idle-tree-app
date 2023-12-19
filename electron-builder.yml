@@ -1,0 +1,9 @@
+appId: "com.Moses.TreeIdle"
+productName: "IdleChristmasTree"
+extends: null
+
+buildVersion: "0.1.0"
+
+directories:
+  output: dist
+  buildResources: src/assets
