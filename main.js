@@ -26,7 +26,18 @@ const createWindow = () => {
     autoHideMenuBar: true,
     backgroundColor: '#00FFFFFF',
     transparent: true,
-    titleBarStyle: 'hidden'
+    titleBarStyle: 'hidden',
+    thickFrame: false,
+  });
+
+  win.on('blur', () => {
+    const [w, h] = win.getSize();
+    win.setSize(w, h);
+  });
+
+  win.on('focus', () => {
+    const [w, h] = win.getSize();
+    win.setSize(w, h);
   });
 
   win.loadURL(process.env.NODE_ENV === 'dev' ? devUrl : startUrl);

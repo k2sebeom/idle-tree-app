@@ -18,4 +18,6 @@ mac:
     LSUIElement: false
 
 win:
+  target:
+    - portable
   icon: assets/icon.ico
